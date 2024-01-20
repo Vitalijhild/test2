@@ -97,11 +97,21 @@ def main():
     create()
     
     while True:
-        ans = int(input("1 - новий курс, 2 - новий студент, 3 - зв'язок"))
-        if  ans == 1:
-            new_course(input('Введіть назву курсу та інструктора через ,: ').split(', '))
-        elif ans == 2:
-            new_student(input('Ім’я, вік і спеціальність через ,: ').split(', '))
+        try:
+            ans = int(input("1 - новий курс, 2 - новий студент, 3 - зв'язок, 0 - завершити: "))
+            if  ans == 1:
+                new_course(input('Введіть назву курсу та інструктора через ,: ').split(', '))
+            elif ans == 2:
+                new_student(input('Ім’я, вік і спеціальність через ,: ').split(', '))
+            elif ans == 0:
+                break
+            elif ans == 3:
+                pass
+            
+            else:
+                print('Не вірний ввід, спробуйте ще раз:(')
+        except:
+            print('Не вірний ввід, спробуйте ще раз:(')
 
     
 
